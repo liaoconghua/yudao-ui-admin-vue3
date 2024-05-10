@@ -18,88 +18,81 @@
               </div>
             </div>
           </el-col>
-          <el-col :xl="12" :lg="12" :md="12" :sm="24" :xs="24">
-            <div class="h-70px flex items-center justify-end lt-sm:mt-10px">
-              <div class="px-8px text-right">
-                <div class="mb-16px text-14px text-gray-400">{{ t('workplace.project') }}</div>
-                <CountTo
-                  class="text-20px"
-                  :start-val="0"
-                  :end-val="totalSate.project"
-                  :duration="2600"
-                />
-              </div>
-              <el-divider direction="vertical" />
-              <div class="px-8px text-right">
-                <div class="mb-16px text-14px text-gray-400">{{ t('workplace.toDo') }}</div>
-                <CountTo
-                  class="text-20px"
-                  :start-val="0"
-                  :end-val="totalSate.todo"
-                  :duration="2600"
-                />
-              </div>
-              <el-divider direction="vertical" border-style="dashed" />
-              <div class="px-8px text-right">
-                <div class="mb-16px text-14px text-gray-400">{{ t('workplace.access') }}</div>
-                <CountTo
-                  class="text-20px"
-                  :start-val="0"
-                  :end-val="totalSate.access"
-                  :duration="2600"
-                />
-              </div>
-            </div>
-          </el-col>
+<!--          <el-col :xl="12" :lg="12" :md="12" :sm="24" :xs="24">-->
+<!--            <div class="h-70px flex items-center justify-end lt-sm:mt-10px">-->
+<!--              <div class="px-8px text-right">-->
+<!--                <div class="mb-16px text-14px text-gray-400">{{ t('workplace.project') }}</div>-->
+<!--                <CountTo-->
+<!--                  class="text-20px"-->
+<!--                  :start-val="0"-->
+<!--                  :end-val="totalSate.project"-->
+<!--                  :duration="2600"-->
+<!--                />-->
+<!--              </div>-->
+<!--              <el-divider direction="vertical" />-->
+<!--              <div class="px-8px text-right">-->
+<!--                <div class="mb-16px text-14px text-gray-400">{{ t('workplace.toDo') }}</div>-->
+<!--                <CountTo-->
+<!--                  class="text-20px"-->
+<!--                  :start-val="0"-->
+<!--                  :end-val="totalSate.todo"-->
+<!--                  :duration="2600"-->
+<!--                />-->
+<!--              </div>-->
+<!--              <el-divider direction="vertical" border-style="dashed" />-->
+<!--              <div class="px-8px text-right">-->
+<!--                <div class="mb-16px text-14px text-gray-400">{{ t('workplace.access') }}</div>-->
+<!--                <CountTo-->
+<!--                  class="text-20px"-->
+<!--                  :start-val="0"-->
+<!--                  :end-val="totalSate.access"-->
+<!--                  :duration="2600"-->
+<!--                />-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </el-col>-->
         </el-row>
       </el-skeleton>
     </el-card>
   </div>
 
-  <el-row class="mt-8px" :gutter="8" justify="space-between">
+  <el-row class="mt-8px" :gutter="8" justify="space-between"  >
     <el-col :xl="16" :lg="16" :md="24" :sm="24" :xs="24" class="mb-8px">
-      <el-card shadow="never">
-        <template #header>
-          <div class="h-3 flex justify-between">
-            <span>{{ t('workplace.project') }}</span>
-            <el-link
-              type="primary"
-              :underline="false"
-              href="https://github.com/yudaocode"
-              target="_blank"
-            >
-              {{ t('action.more') }}
-            </el-link>
-          </div>
-        </template>
-        <el-skeleton :loading="loading" animated>
-          <el-row>
-            <el-col
-              v-for="(item, index) in projects"
-              :key="`card-${index}`"
-              :xl="8"
-              :lg="8"
-              :md="8"
-              :sm="24"
-              :xs="24"
-            >
-              <el-card shadow="hover" class="mr-5px mt-5px">
-                <div class="flex items-center">
-                  <Icon :icon="item.icon" :size="25" class="mr-8px" />
-                  <span class="text-16px">{{ item.name }}</span>
-                </div>
-                <div class="mt-12px text-9px text-gray-400">{{ t(item.message) }}</div>
-                <div class="mt-12px flex justify-between text-12px text-gray-400">
-                  <span>{{ item.personal }}</span>
-                  <span>{{ formatTime(item.time, 'yyyy-MM-dd') }}</span>
-                </div>
-              </el-card>
-            </el-col>
-          </el-row>
-        </el-skeleton>
-      </el-card>
+<!--      <el-card shadow="never">-->
+<!--&lt;!&ndash;        <template #header>-->
+<!--          <div class="h-3 flex justify-between">-->
+<!--            <span>{{ t('workplace.project') }}</span>-->
+<!--            <el-link type="primary" :underline="false">{{ t('action.more') }}</el-link>-->
+<!--          </div>-->
+<!--        </template>&ndash;&gt;-->
+<!--        <el-skeleton :loading="loading" animated>-->
+<!--          <el-row>-->
+<!--            <el-col-->
+<!--              v-for="(item, index) in projects"-->
+<!--              :key="`card-${index}`"-->
+<!--              :xl="8"-->
+<!--              :lg="8"-->
+<!--              :md="8"-->
+<!--              :sm="24"-->
+<!--              :xs="24"-->
+<!--            >-->
+<!--              <el-card shadow="hover">-->
+<!--                <div class="flex items-center">-->
+<!--                  <Icon :icon="item.icon" :size="25" class="mr-8px" />-->
+<!--                  <span class="text-16px">{{ item.name }}</span>-->
+<!--                </div>-->
+<!--                <div class="mt-16px text-14px text-gray-400">{{ t(item.message) }}</div>-->
+<!--                <div class="mt-16px flex justify-between text-12px text-gray-400">-->
+<!--                  <span>{{ item.personal }}</span>-->
+<!--                  <span>{{ formatTime(item.time, 'yyyy-MM-dd') }}</span>-->
+<!--                </div>-->
+<!--              </el-card>-->
+<!--            </el-col>-->
+<!--          </el-row>-->
+<!--        </el-skeleton>-->
+<!--      </el-card>-->
 
-      <el-card shadow="never" class="mt-8px">
+<!--      <el-card shadow="never" class="mt-8px">
         <el-skeleton :loading="loading" animated>
           <el-row :gutter="20" justify="space-between">
             <el-col :xl="10" :lg="10" :md="24" :sm="24" :xs="24">
@@ -118,9 +111,9 @@
             </el-col>
           </el-row>
         </el-skeleton>
-      </el-card>
+      </el-card>-->
     </el-col>
-    <el-col :xl="8" :lg="8" :md="24" :sm="24" :xs="24" class="mb-8px">
+<!--    <el-col :xl="8" :lg="8" :md="24" :sm="24" :xs="24" class="mb-8px">
       <el-card shadow="never">
         <template #header>
           <div class="h-3 flex justify-between">
@@ -168,7 +161,7 @@
           </div>
         </el-skeleton>
       </el-card>
-    </el-col>
+    </el-col>-->
   </el-row>
 </template>
 <script lang="ts" setup>
@@ -208,80 +201,80 @@ const getCount = async () => {
 
 // 获取项目数
 let projects = reactive<Project[]>([])
-const getProject = async () => {
-  const data = [
-    {
-      name: 'ruoyi-vue-pro',
-      icon: 'akar-icons:github-fill',
-      message: 'https://github.com/YunaiV/ruoyi-vue-pro',
-      personal: 'Spring Boot 单体架构',
-      time: new Date()
-    },
-    {
-      name: 'yudao-ui-admin-vue3',
-      icon: 'logos:vue',
-      message: 'https://github.com/yudaocode/yudao-ui-admin-vue3',
-      personal: 'Vue3 + element-plus',
-      time: new Date()
-    },
-    {
-      name: 'yudao-ui-admin-vben',
-      icon: 'logos:vue',
-      message: 'https://github.com/yudaocode/yudao-ui-admin-vben',
-      personal: 'Vue3 + vben(antd)',
-      time: new Date()
-    },
-    {
-      name: 'yudao-cloud',
-      icon: 'akar-icons:github',
-      message: 'https://github.com/YunaiV/yudao-cloud',
-      personal: 'Spring Cloud 微服务架构',
-      time: new Date()
-    },
-    {
-      name: 'yudao-ui-mall-uniapp',
-      icon: 'logos:vue',
-      message: 'https://github.com/yudaocode/yudao-ui-admin-uniapp',
-      personal: 'Vue3 + uniapp',
-      time: new Date()
-    },
-    {
-      name: 'yudao-ui-admin-vue2',
-      icon: 'logos:vue',
-      message: 'https://github.com/yudaocode/yudao-ui-admin-vue2',
-      personal: 'Vue2 + element-ui',
-      time: new Date()
-    }
-  ]
-  projects = Object.assign(projects, data)
-}
+// const getProject = async () => {
+//   const data = [
+//     /*{
+//       name: 'Github',
+//       icon: 'akar-icons:github-fill',
+//       message: 'workplace.introduction',
+//       personal: 'Archer',
+//       time: new Date()
+//     },
+//     {
+//       name: 'Vue',
+//       icon: 'logos:vue',
+//       message: 'workplace.introduction',
+//       personal: 'Archer',
+//       time: new Date()
+//     },
+//     {
+//       name: 'Angular',
+//       icon: 'logos:angular-icon',
+//       message: 'workplace.introduction',
+//       personal: 'Archer',
+//       time: new Date()
+//     },
+//     {
+//       name: 'React',
+//       icon: 'logos:react',
+//       message: 'workplace.introduction',
+//       personal: 'Archer',
+//       time: new Date()
+//     },
+//     {
+//       name: 'Webpack',
+//       icon: 'logos:webpack',
+//       message: 'workplace.introduction',
+//       personal: 'Archer',
+//       time: new Date()
+//     },
+//     {
+//       name: 'Vite',
+//       icon: 'vscode-icons:file-type-vite',
+//       message: 'workplace.introduction',
+//       personal: 'Archer',
+//       time: new Date()
+//     }*/
+//   ]
+//   projects = Object.assign(projects, data)
+// }
 
 // 获取通知公告
 let notice = reactive<Notice[]>([])
 const getNotice = async () => {
   const data = [
     {
-      title: '系统支持 JDK 8/17/21，Vue 2/3',
+      title: '系统升级版本',
       type: '通知',
-      keys: ['通知', '8', '17', '21', '2', '3'],
+      keys: ['通知', '升级'],
       date: new Date()
     },
     {
-      title: '后端提供 Spring Boot 2.7/3.2 + Cloud 双架构',
+      title: '系统凌晨维护',
       type: '公告',
-      keys: ['公告', 'Boot', 'Cloud'],
+      keys: ['公告', '维护'],
       date: new Date()
     },
     {
-      title: '全部开源，个人与企业可 100% 直接使用，无需授权',
+      title: '系统升级版本',
       type: '通知',
-      keys: ['通知', '无需授权'],
+      keys: ['通知', '升级'],
       date: new Date()
     },
     {
-      title: '国内使用最广泛的快速开发平台，超 300+ 人贡献',
+      title: '系统凌晨维护',
       type: '公告',
-      keys: ['公告', '最广泛'],
+      keys: ['公告', '维护'],
       date: new Date()
     }
   ]
@@ -378,7 +371,7 @@ const getWeeklyUserActivity = async () => {
 const getAllApi = async () => {
   await Promise.all([
     getCount(),
-    getProject(),
+    // getProject(),
     getNotice(),
     getShortcut(),
     getUserAccessSource(),
